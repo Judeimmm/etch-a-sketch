@@ -1,6 +1,6 @@
 let gridResolution = 16;
 const container = document.querySelector('#container');
-function defaultGrid() {
+function defaultGrid(gridResolution) {
 for (i = 1 ; i <= gridResolution; i++){
     const rows = document.createElement('div');
     rows.className = 'rows';
@@ -21,20 +21,11 @@ for (i = 1; i <= gridResolution; i++){
 })
 )};
 
-defaultGrid()
+defaultGrid(gridResolution)
 const resetGridSizeButton = document.querySelector(".reset")
-
 resetGridSizeButton.addEventListener("click", () => {
-let gridResolution;
-container.textContent = ' '
-gridResolution = parseInt(prompt("What resolution do you want the grid?", 16)); if (isNaN(gridResolution) == true || gridResolution > 100) return alert("Error!");
-for (i = 1 ; i <= Math.pow(gridResolution, 2); i++){
-    const rows = document.createElement('div');
-    rows.className = 'grid'
-    document.getElementById('container').appendChild(rows);
-    rows.textContent = "";
-    elementPadding = 22 - (gridResolution - 16);
-    rows.style.padding = `${elementPadding}px`; 
-};
-})
-
+    container.textContent = ' '
+    let gridResolution = parseInt(prompt("What resolution do you want the grid?", 16)); 
+    if (isNaN(gridResolution) == true || gridResolution > 100) return alert("Error!");
+    defaultGrid(gridResolution)
+});
