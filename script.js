@@ -26,6 +26,6 @@ const resetGridSizeButton = document.querySelector(".reset")
 resetGridSizeButton.addEventListener("click", () => {
     container.textContent = ' '
     let gridResolution = parseInt(prompt("What resolution do you want the grid?", 16)); 
-    if (isNaN(gridResolution) == true || gridResolution > 100) return alert("Error!");
+    if (isNaN(gridResolution) == true || gridResolution > 100) return alert("Error! your response is either not a number or is a number greater than 100.");
     defaultGrid(gridResolution)
 });
