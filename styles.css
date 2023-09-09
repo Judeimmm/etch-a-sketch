@@ -10,11 +10,15 @@ body {
     width: 920px;
     height: 920px;
 }
-.grid{
+.rows{
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
     border: 1px solid black;
-    padding: 22px;
-    flex-basis: 1%;
+}
+.columns {
+    border: 1px solid black;
+    flex-grow: 1;
 }
 .black {
     background-color: black;
